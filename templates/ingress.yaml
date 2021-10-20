@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+spec:
+  rules:
+    - host: test.helm.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nginx-svc
+              servicePort: 80
